@@ -29,5 +29,11 @@ const messageSchema = new mongoose.Schema({
     //   minLength: [10, "Message Must Contain At Least 10 Characters!"],
     // },
 });
+
+messageSchema.methods.generateJsonWebToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+        expiresIn: process.env.JWT_EXPIRES,
+  });
+};
   
 export const Message = mongoose.model("Message", messageSchema);   //model creation

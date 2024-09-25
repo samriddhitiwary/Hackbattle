@@ -1,39 +1,169 @@
-.header{
-    background-color:rgb(54, 206, 206);
-    padding: 0.1%;
-   
-    
-}
-.wordsInHeader{
-    color: white;
-    font-size: 15px;
-    margin-left: 70%;
-    
-}
-.imgDiv{
-    display: inline-block;  
-    
-}
-
-.img{
-    margin-left: 10%;
-    width: 50%;
-    border-color: black;
-}
-.search{
-    border-color: black 2px;
-    width:50%;  
-    /* margin-left: 30%; */
-   display: inline-block;
-   margin-top: 1%;
-
-}
-.headerFlexBox{
+.header {
+    background: linear-gradient(to right, #0a2c2c, #a4f5f5); 
+    padding: 0rem; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
     display: flex;
-    justify-content: space-around;
+    align-items: center; 
+    height: 2rem; 
+    padding: 1rem;
 }
-.header_but:hover{
 
-    box-shadow: 10px 10px 10px black;
-    background-color: rgb(54, 206, 206);
+.wordsInHeader {
+    color: black; 
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: auto; 
+    text-align: right; 
+    opacity: 0.8; 
+    margin-top: 1%;
+}
+
+.img {
+    margin-left: 2rem; /* Spacing between logo and text */
+    width: 10rem; /* Fixed width for the logo */
+    border-radius: 10px; /* Rounded corners for the logo */
+    position: relative; /* Positioning for neon effect */
+    z-index: 1; /* Ensure logo is on top */
+}
+
+.img::before {
+    content: ''; /* Add a pseudo-element for the neon effect */
+    position: absolute;
+    top: -10px; /* Position above the logo */
+    left: -10px; /* Position to the left of the logo */
+    right: -10px; /* Position to the right of the logo */
+    bottom: -10px; /* Position below the logo */
+    background-color: rgba(54, 206, 206, 0.7); /* Neon color */
+    border-radius: 15px; /* Rounded corners for the neon effect */
+    filter: blur(20px); /* Blur effect for neon glow */
+    z-index: -1; /* Send the neon effect behind the logo */
+    transition: transform 0.3s; /* Animation effect */
+}
+
+.img:hover::before {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.search {
+    width: 50rem; /* Retained original width for the search box */
+    margin: 10px 0; /* Vertical margin for spacing */
+}
+
+.headerFlexBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 1rem;
+    position: relative; /* For positioning the fading borders */
+    overflow: hidden; /* Ensure the gradient doesn't overflow */
+}
+
+.headerFlexBox::before,
+.headerFlexBox::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px; /* Height of the border */
+}
+
+.headerFlexBox::before {
+    top: 0; /* Position at the top */
+    background: linear-gradient(to right, transparent, rgb(0, 17, 21) 10%, transparent);
+}
+
+.headerFlexBox::after {
+    bottom: 0; /* Position at the bottom */
+    background: linear-gradient(to right, transparent, rgb(0, 17, 21) 25%, transparent);
+}
+
+.header_but {
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: rgb(54, 206, 206);
+    border: none; 
+    border-radius: 5px; 
+    padding: 1rem; 
+    transition: background-color 0.3s, transform 0.3s; 
+    font-weight: bold; 
+}
+
+.header_but:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    background-color: rgb(54, 206, 206); 
+    color: white; 
+    transform: translateY(-2px); 
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 5px; /* Rounded corners for the navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.nav-dropdown {
+    border-radius: 5px; /* Rounded corners for dropdown */
+    overflow: hidden; /* Prevent overflow from animations */
+}
+
+.nav-dropdown:hover {
+    background-color: rgba(54, 206, 206, 0.3); /* Highlight on hover */
+}
+
+.nav-dropdown .dropdown-item {
+    position: relative;
+    padding: 1rem 2rem; /* Spacious padding for a luxurious feel */
+    background: linear-gradient(to right, rgba(54, 206, 206, 0.1), rgba(255, 255, 255, 0.8));
+    color: #36CECE; /* Main text color */
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase; /* Uppercase text for a bold style */
+    letter-spacing: 0.05rem; /* Slight spacing between letters */
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    margin: 0.5rem 0; /* Spacing between items */
+}
+
+.nav-dropdown .dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #36CECE, #a4f5f5);
+    transition: all 0.4s ease; /* Smooth slide effect */
+    z-index: -1; /* Behind the text */
+}
+
+.nav-dropdown .dropdown-item:hover {
+    color: white; /* Change text color on hover */
+    transform: translateX(100px); /* Slide effect */
+}
+
+.nav-dropdown .dropdown-item:hover::before {
+    left: 0; /* Slide in from the left */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .headerFlexBox {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align */
+    }
+
+    .search {
+        width: 90%; /* Full width on smaller screens */
+        margin: 10px 0; /* Margin for spacing */
+    }
+
+    .wordsInHeader {
+        margin-left: 0; /* Reset margin for smaller screens */
+        text-align: center; /* Center align text */
+    }
+
+    .img {
+        width: 80%; /* Responsive logo size */
+    }
 }

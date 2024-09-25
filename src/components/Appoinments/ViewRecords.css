@@ -6,8 +6,11 @@
     height: 100vh; 
     /* filter: blur(); */
     overflow: hidden; 
-    background-Image: url('images/ViewRecords/img1.svg');
+    background-Image: url('./img1.svg');
     background-size: cover; 
     background-position: center; 
   }
+.charts{
+    z-index: 1;
+}
   

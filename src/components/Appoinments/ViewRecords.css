@@ -4,9 +4,9 @@
     left: 0;
     width: 100vw; 
     height: 100vh; 
-    filter: blur();
+    /* filter: blur(); */
     overflow: hidden; 
-    background-Image: url('img1.jpg');
+    background-Image: url('images/ViewRecords/img1.svg');
     background-size: cover; 
     background-position: center; 
   }

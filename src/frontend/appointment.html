@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Booking</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .bg {
+            background-image: url('Group95.jpg');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        label {
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        .form-row > div {
+            flex: 1;
+        }
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="form-container">
+            <h2>Book Your Appointment</h2>
+            <form>
+                <div class="form-row">
+                    <div>
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div>
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required min="1900-01-01" max="2099-12-31">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="appointment_date">Appointment Date</label>
+                        <input type="date" id="appointment_date" name="appointment_date" required min="2024-01-01" max="2099-12-31">
+                    </div>
+                </div>
+
+                <label for="department">Department</label>
+                <select id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="pediatrics">Pediatrics</option>
+                </select>
+
+                <label for="doctor">Doctor</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">Select Doctor</option>
+                </select>
+
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <input type="submit" value="Book Appointment">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const doctors = {
+            cardiology: [
+                {firstName: "Rajiv", lastName: "Singh"},
+                {firstName: "Shalini", lastName: "Sharma"}
+            ],
+            dermatology: [
+                {firstName: "Naveen", lastName: "Mishra"},
+                {firstName: "Jenny", lastName: "Dsouza"}
+            ],
+            neurology: [
+                {firstName: "David", lastName: "Demelo"},
+                {firstName: "Lavanya", lastName: "Krishnan"}
+            ],
+            orthopedics: [
+                {firstName: "Neeta", lastName: "Srivastava"},
+                {firstName: "Jai", lastName: "Singh"}
+            ],
+            pediatrics: [
+                {firstName: "Sambhav", lastName: "Patel"},
+                {firstName: "Shalu", lastName: "Maheshwari"}
+            ]
+        };
+        function populateDoctors() {
+            const department = document.getElementById('department').value;
+            const doctorSelect = document.getElementById('doctor');
+            doctorSelect.innerHTML = '<option value="">Select Doctor</option>';
+
+            if (department && doctors[department]) {
+                doctors[department].forEach(doctor => {
+                    const option = document.createElement('option');
+                    option.value = `${doctor.firstName} ${doctor.lastName}`;
+                    option.textContent = `${doctor.firstName} ${doctor.lastName}`;
+                    doctorSelect.appendChild(option);
+                });
+            }
+        }
+        document.getElementById('department').addEventListener('change', populateDoctors);
+    </script>
+</body>
+</html>

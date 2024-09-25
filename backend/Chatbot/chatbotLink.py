@@ -1,0 +1,1 @@
+chatbotLink = "https://builder.corover.ai/params/?appid=598c570d-ba04-43ed-83c9-4f2e780e381a&partnerKey=4b6cd178-3c9d-45bb-be33-15b9538fd055&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthdmlzaGEiLCJlbWFpbElkIjoia2F2aXNoYS5oYXN3YW5pQGdtYWlsLmNvbSIsImNvbXBhbnlJZCI6bnVsbCwiaWF0IjoxNzI3MjQwOTA1LCJleHAiOjE3MjczMjczMDV9.cgoQTyoTNi0YKFl_7j1JSQBnPcT8-n1t_yzpncLAovE#/"

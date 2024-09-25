@@ -121,3 +121,31 @@ export const getUserDetails = catchAsyncErrors(async (req, res, next) => {
         user,
     });
 });
+
+// Logout function for dashboard admin
+export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
+    res
+        .status(201)
+        .cookie("adminToken", "", {             // to remove admin to ken
+            httpOnly: true,
+            expires: new Date(Date.now()),
+        })
+        .json({
+            success: true,
+            message: "Admin Logged Out Successfully.",
+        });
+});
+
+// Logout function for frontend patient
+export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
+    res
+        .status(201)
+        .cookie("patientToken", "", {
+            httpOnly: true,
+            expires: new Date(Date.now()),
+        })
+        .json({
+            success: true,
+            message: "Patient Logged Out Successfully.",
+        });
+});

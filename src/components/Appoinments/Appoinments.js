@@ -39,7 +39,8 @@ const Appointments = () => {
             <p>Find Hospital</p>
         </Button> 
 
-        <Button className='but' variant="light">
+        <Button className='but' variant="light"
+        onClick={() => navigate('/view-record')}>
             <img src='images/Appointments/img6.svg' alt="View Health Record" />
             <p>View Health Record</p>
         </Button> 

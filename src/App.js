@@ -12,6 +12,7 @@ import PatientCare from './components/PatientCare/PatientCare';
 import FooterAppointments from './components/FooterAppointments/FooterAppointments';
 import Footer from './components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.css';
+import ViewRecords from './components/Appoinments/ViewRecords';
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
         
         {/* Separate page layout for Consult Online */}
         <Route path="/consult-online" element={<ConsultOnline />} />
+        <Route path="/view-record" element={<ViewRecords />}/>
       </Routes>
     </Router>
   );

@@ -1,0 +1,13 @@
+.fullscreen-image {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    filter: blur();
+    overflow: hidden; 
+    background-Image: url('img1.jpg');
+    background-size: cover; 
+    background-position: center; 
+  }
+  

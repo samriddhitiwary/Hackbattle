@@ -65,6 +65,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';                          
 import ClinicCarousel from './components/Carousel/Carousel';
+import Hospitals from './components/Hospitals/Hospitals';
 import Appointments from './components/Appoinments/Appoinments';
 import Speciality from './components/Speciality/Speciality';
 import MiniNavbar from './components/MiniNavbar/MiniNavbar';
@@ -108,6 +109,13 @@ const MainLayout = () => (
     <br />
     <Speciality />
     <br />
+<<<<<<< HEAD
+=======
+    <PatientCare />
+    {/* <Hospitals/> */}
+    
+    {/* <FooterAppointments /> */}
+>>>>>>> 9baeb2454cd031ed958a973275f6150a374516aa
     <Footer />
   </>
 );

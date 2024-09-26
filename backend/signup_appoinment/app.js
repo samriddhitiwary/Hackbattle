@@ -7,6 +7,7 @@ import { dbConnection } from "./database/dbConnection.js";
 import messageRouter from "./router/messageRouter.js";
 import {errorMiddleware} from "./middlewares/errorMiddleware.js";
 import userRouter from "./router/userRouter.js";
+import oppointmentRouter from "./router/oppointmentRouter.js";
 
 const app = express();
 config({path: "./config/config.env"});
@@ -37,6 +38,9 @@ app.use("/api/v1/message", messageRouter);
 
 //POST: http://localhost:4000/api/v1/user/patient/register
 app.use("/api/v1/user", userRouter);
+
+//POST: http://localhost:4000/api/v1/oppointment/post
+app.use("/api/v1/oppointment", oppointmentRouter);
 
 dbConnection();
 

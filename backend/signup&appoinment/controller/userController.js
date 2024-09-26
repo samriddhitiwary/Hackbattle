@@ -149,3 +149,51 @@ export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
             message: "Patient Logged Out Successfully.",
         });
 });
+
+export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {   //error
+    const {
+        firstName,
+        lastName,
+        email,
+        phone,
+        dob,
+        gender,
+        password,
+        doctorDepartment,
+    } = req.body;
+    if (
+        !firstName ||
+        !lastName ||
+        !email ||
+        !phone ||
+        !dob ||
+        !gender ||
+        !password ||
+        !doctorDepartment
+    ) {
+        return next(new ErrorHandler("Please Fill Full Form!", 400));
+    }
+    const isRegistered = await User.findOne({ email });
+    if (isRegistered) {
+        return next(
+            new ErrorHandler("Doctor With This Email Already Exists!", 400)
+        );
+    }
+    
+    const doctor = await User.create({
+        firstName,
+        lastName,
+        email,
+        phone,
+        dob,
+        gender,
+        password,
+        role: "Doctor",
+        doctorDepartment,
+    });
+    res.status(200).json({
+        success: true,
+        message: "New Doctor Registered",
+        doctor,
+    });
+});

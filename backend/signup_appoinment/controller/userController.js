@@ -188,8 +188,8 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {   //err
         dob,
         gender,
         password,
-        role: "Doctor",
         doctorDepartment,
+        role: "Doctor",
     });
     res.status(200).json({
         success: true,

@@ -1,0 +1,89 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.bg {
+    background-image: url('health.jpg');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 80px;
+}
+
+.Sign_In_container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 22rem;  /* Adjust container width */
+    padding: 30px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group,form-group_1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 48%;
+}
+.form-group_2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
+    margin-top: 2rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.button-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+}

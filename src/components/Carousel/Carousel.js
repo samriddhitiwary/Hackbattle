@@ -7,9 +7,9 @@ function ClinicCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src='images/carousel/image1.jpg'
+          src='images/carousel/new2.jpg'
           alt="First slide"
-          style={{ objectFit: 'content', maxHeight: '30rem' }}
+          style={{ objectFit: 'content', maxHeight: '40rem' }}
         />
 
       </Carousel.Item>
@@ -17,9 +17,9 @@ function ClinicCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src='images/carousel/img2.jpg'
+          src='images/carousel/new1.jpg'
           alt="Second slide"
-          style={{ objectFit: 'cover', maxHeight: '30rem' }}
+          style={{ objectFit: 'cover', maxHeight: '40rem' }}
         />
 
       </Carousel.Item>
@@ -27,34 +27,34 @@ function ClinicCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src='images/carousel/img3.jpg'
+          src='images/carousel/new3.webp'
           alt="Third slide"
-          style={{ objectFit: 'cover', maxHeight: '30rem' }}
+          style={{ objectFit: 'cover', maxHeight: '40rem' }}
         />
       </Carousel.Item>
 
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src='images/carousel/img4.jpg'
+          src='images/carousel/new4.webp'
           alt="Third slide"
-          style={{ objectFit: 'cover', maxHeight: '30rem' }}
+          style={{ objectFit: 'cover', maxHeight: '40rem' }}
         />
       </Carousel.Item>
 
 
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
           className="d-block w-100"
           src='images/carousel/img5.jpg'
           alt="Third slide"
           style={{ objectFit: 'cover', maxHeight: '30rem' }}
         />
-      </Carousel.Item>
+      </Carousel.Item> */}
 
 
 
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
           className="d-block w-100"
           src='images/carousel/img6.jpg'
@@ -70,7 +70,7 @@ function ClinicCarousel() {
           alt="Third slide"
           style={{ objectFit: 'cover', maxHeight: '30rem' }}
         />
-      </Carousel.Item>
+      </Carousel.Item> */}
 
 
 

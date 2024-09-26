@@ -1,16 +1,92 @@
 .fullscreen-image {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100vw; 
-    height: 100vh; 
-    /* filter: blur(); */
-    overflow: hidden; 
-    background-Image: url('./img1.svg');
-    background-size: cover; 
-    background-position: center; 
-  }
-.charts{
-    z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust based on your layout */
+  background-Image: url('./img1.svg') ; /* Your background image */
+  background-size: cover;
 }
-  
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px; /* Space between cards */
+  width: 80%; /* Adjust as needed */
+}
+
+.chart-card {
+  background-color: rgba(242, 240, 240, 0.55); /* White background with opacity */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 0; /* Slightly darker than background */
+  position: relative;
+}
+.charts-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* Align items at the top */
+  height: 100vh; /* Ensure it takes full height for vertical animations */
+  position: relative; /* Allow positioning of absolute elements */
+}
+
+.chart-card {
+  width: 20 rem; /* Adjust as needed */
+  margin: 10px;
+  opacity: 0;
+  transform: translateY(20px); /* Start from below */
+  animation-duration: 2s;
+  animation-fill-mode: forwards; /* Maintain final state after animation */
+  position: absolute; /* Position cards absolutely */
+  top: 20%; /* Set final position at 25% from the top */
+}
+
+.left-card {
+  animation-name: flyInFromLeft;
+  left: 1%; /* Start off-screen left */
+}
+
+.middle-card {
+  animation-name: flyInFromTop;
+  left: 30%; /* Center horizontally */
+  transform: translateX(-50%) translateY(-100%); /* Adjust for centering */
+}
+
+.right-card {
+  animation-name: flyInFromRight;
+  right: 18%; /* Start off-screen right */
+}
+
+@keyframes flyInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* End at original position */
+  }
+}
+
+@keyframes flyInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%); /* Start off-screen top */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+@keyframes flyInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%); /* Start off-screen right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(20%); /* End at original position */
+  }
+}

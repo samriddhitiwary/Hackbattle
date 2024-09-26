@@ -9,18 +9,15 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import './Header.css';
 
-
 const Header = () => {
   return (
     <header>
-      <div className='header' >
-
+      <div className='header'>
         <p className='wordsInHeader'>
-          <img src='images/Header/img1.png'></img>
+          <img src='images/Header/img1.png' alt='Header Image'></img>
           Privacy Policy | Disclaimer | Contact
         </p>
       </div>
-
 
       <div className='headerFlexBox'>
         <div>
@@ -38,27 +35,22 @@ const Header = () => {
               🔎
             </Button>
           </InputGroup>
-          <br></br>
+          <br />
         </div>
 
-        <div>
-          <p>Emergency : <Button className='header_but' variant="light"> ☎ 108</Button></p>
-          <p>CHAT WITH US: 
-  <Button className='header_but' variant="light" onClick={() => window.location.href='https://builder.corover.ai/params/?appid=598c570d-ba04-43ed-83c9-4f2e780e381a&partnerKey=4b6cd178-3c9d-45bb-be33-15b9538fd055&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthdmlzaGEiLCJlbWFpbElkIjoia2F2aXNoYS5oYXN3YW5pQGdtYWlsLmNvbSIsImNvbXBhbnlJZCI6bnVsbCwiaWF0IjoxNzI3MjQwOTA1LCJleHAiOjE3MjczMjczMDV9.cgoQTyoTNi0YKFl_7j1JSQBnPcT8-n1t_yzpncLAovE#/'}>
-    ☎ 
-  </Button> 
-</p>
-
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <p style={{ margin: '0' }}><b>Emergency:</b> </p>
+          <Button className='header_but' variant="light"> ☎ 108</Button>
+          <p style={{ margin: '10px' }}><b>CHAT WITH US:</b> </p>
+          <Button className='header_but' variant="light" onClick={() => window.location.href='https://builder.corover.ai/params/?appid=598c570d-ba04-43ed-83c9-4f2e780e381a&partnerKey=4b6cd178-3c9d-45bb-be33-15b9538fd055&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthdmlzaGEiLCJlbWFpbElkIjoia2F2aXNoYS5oYXN3YW5pQGdtYWlsLmNvbSIsImNvbXBhbnlJZCI6bnVsbCwiaWF0IjoxNzI3MjQwOTA1LCJleHAiOjE3MjczMjczMDV9.cgoQTyoTNi0YKFl_7j1JSQBnPcT8-n1t_yzpncLAovE#/'}> 🗪</Button>
         </div>
-        <br></br>
+        <br />
       </div>
 
-
       <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        
-            <NavDropdown title="Patient Care" id="basic-nav-dropdown">
+        <Navbar expand="lg" className="bg-body-tertiary">
+          <Container>
+             <NavDropdown title="Patient Care" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Find A Doctor</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
               Apollo Surgery-Assured Price
@@ -176,13 +168,10 @@ const Header = () => {
             </NavDropdown>
 
 
-
-          
-      </Container>
-    </Navbar>
-
+          </Container>
+        </Navbar>
       </div>
-      <br></br>
+      <br />
     </header>
   );
 };

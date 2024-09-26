@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 import Header from './components/Header/Header';
 import ClinicCarousel from './components/Carousel/Carousel';
+import Hospitals from './components/Hospitals/Hospitals';
 import Appointments from './components/Appoinments/Appoinments';
 import Speciality from './components/Speciality/Speciality';
 import MiniNavbar from './components/MiniNavbar/MiniNavbar';
@@ -50,7 +51,9 @@ const MainLayout = () => (
     <Outlet /> {/* This renders the child route content, like Speciality, Procedures, etc. */}
     <br />
     <PatientCare />
-    <FooterAppointments />
+    {/* <Hospitals/> */}
+    
+    {/* <FooterAppointments /> */}
     <Footer />
   </>
 );
